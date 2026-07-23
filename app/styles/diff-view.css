@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 .diff-panel-content {
   scrollbar-width: thin;
   scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
