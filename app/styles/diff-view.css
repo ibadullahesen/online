@@ -24,7 +24,6 @@
   background-color: rgba(155, 155, 155, 0.7);
 }
 
-/* Hide scrollbar for the left panel when not hovered */
 .diff-panel:not(:hover) .diff-panel-content::-webkit-scrollbar {
   display: none;
 }
@@ -33,7 +32,7 @@
   scrollbar-width: none;
 }
 
-/* Estilos para as linhas de diff */
+/* Diff block colors */
 .diff-block-added {
   @apply bg-green-500/20 border-l-4 border-green-500;
 }
@@ -42,7 +41,7 @@
   @apply bg-red-500/20 border-l-4 border-red-500;
 }
 
-/* Melhorar contraste para mudanças */
+/* Hover states */
 .diff-panel-content .group:hover .diff-block-added {
   @apply bg-green-500/30;
 }
@@ -51,9 +50,13 @@
   @apply bg-red-500/30;
 }
 
-/* Estilos unificados para ambas as visualizações */
+/* Diff line */
 .diff-line {
-  @apply flex group min-w-fit transition-colors duration-150;
+  @apply flex min-w-fit transition-colors duration-150;
+}
+
+.diff-line:hover {
+  background-color: var(--bolt-elements-background-depth-2);
 }
 
 .diff-line-number {
@@ -61,10 +64,14 @@
 }
 
 .diff-line-content {
-  @apply px-4 py-0.5 font-mono whitespace-pre flex-1 group-hover:bg-bolt-elements-background-depth-2 text-bolt-elements-textPrimary;
+  @apply px-4 py-0.5 font-mono whitespace-pre flex-1 text-bolt-elements-textPrimary;
 }
 
-/* Cores específicas para adições/remoções */
+.diff-line:hover .diff-line-content {
+  background-color: var(--bolt-elements-background-depth-2);
+}
+
+/* Added / removed colors */
 .diff-added {
   @apply bg-green-500/20 border-l-4 border-green-500;
 }
